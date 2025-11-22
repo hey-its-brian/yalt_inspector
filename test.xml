@@ -1,0 +1,28 @@
+<config>
+	<filter>
+		<rule>
+			<source>
+				<any></any>
+			</source>
+			<destination>
+				<network>wanip</network>
+				<port>443</port>
+			</destination>
+			<ipprotocol>inet</ipprotocol>
+			<protocol>tcp</protocol>
+			<target>192.168.1.155</target>
+			<local-port>18443</local-port>
+			<interface>wan</interface>
+			<descr><![CDATA[https port forward for npm]]></descr>
+			<associated-rule-id>nat_681525508a2b17.35728741</associated-rule-id>
+			<updated>
+				<time>1746216272</time>
+				<username><![CDATA[admin@192.168.1.3 (Local Database)]]></username>
+			</updated>
+			<created>
+				<time>1746216272</time>
+				<username><![CDATA[admin@192.168.1.3 (Local Database)]]></username>
+			</created>
+		</rule>
+	</filter>
+</config>
