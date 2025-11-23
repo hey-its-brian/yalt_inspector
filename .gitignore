@@ -1,0 +1,59 @@
+# macOS trash
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python bytecode / caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+env/
+.venv/
+.python-version
+
+# Build / distribution
+build/
+dist/
+*.egg-info/
+
+# IDE / editor artifacts
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs (pfSense logs, app logs, scratch logs)
+logs/
+*.log
+
+# OS temp files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Backup files
+*~
+*.bak
+*.tmp
+
+# pytest cache
+.pytest_cache/
+
+# mypy / type checking
+.mypy_cache/
+
+# Coverage reports
+htmlcov/
+.coverage
+coverage.xml
+
+# Jupyter (if you later decide to use notebooks)
+.ipynb_checkpoints/
+
+# Local config you might add later
+config/*.local
+config/*.secret
