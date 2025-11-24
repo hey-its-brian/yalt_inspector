@@ -56,9 +56,9 @@ def analyze_logs(rules: List[PFRule], logs: List[LogEntry]) -> List[Anomaly]:
     anomalies: List[Anomaly] = []
 
     for log in logs:
-        matching = [r for r in rules if _rule_matches_log(r,log)]
+        matching = [r for r in rules if _rule_matches_log(r, log)]
 
-        # no matching rule at all
+        # No matching rule at all
         if not matching:
             anomalies.append(
                 Anomaly(
@@ -70,7 +70,7 @@ def analyze_logs(rules: List[PFRule], logs: List[LogEntry]) -> List[Anomaly]:
             )
             continue
 
-        # if every matching rule says one action but log says another
+        # If every matching rule says one action, but log says another
         rule_actions = {r.action for r in matching if r.action}
         log_action = log.action or ""
 
@@ -80,7 +80,8 @@ def analyze_logs(rules: List[PFRule], logs: List[LogEntry]) -> List[Anomaly]:
                     kind="action_mismatch",
                     log=log,
                     matching_rules=matching,
-
+                    reason=f"Log action '{log_action}' conflicts with rule action(s): {sorted(rule_actions)}."
                 )
             )
 
+    return anomalies
